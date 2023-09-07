@@ -27,15 +27,32 @@ namespace AutomationTests
 
         public void ClickElement(By byLocator)
         {
-            var element = Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(byLocator));
+            var element = Wait.Until(driver =>
+            {
+                var foundElement = driver.FindElement(byLocator);
+                if (foundElement != null && foundElement.Displayed && foundElement.Enabled)
+                {
+                    return foundElement;
+                }
+                return null;
+            });
             element.Click();
         }
 
         public void EnterText(By byLocator, string text)
         {
-            var element = Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(byLocator));
+            var element = Wait.Until(driver =>
+            {
+                var foundElement = driver.FindElement(byLocator);
+                if (foundElement != null && foundElement.Displayed && foundElement.Enabled)
+                {
+                    return foundElement;
+                }
+                return null;
+            });
             element.Clear();
             element.SendKeys(text);
         }
+
     }
 }
