@@ -1,32 +1,46 @@
-# Prerequisites
-*.d
+# C#
+bin/
+obj/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Rider (JetBrains IDE for C#)
+.idea/
 
-# Precompiled Headers
-*.gch
-*.pch
+# Visual Studio Code
+.vscode/
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# Visual Studio
+*.dbmdl
+*.pfx
+*.publishsettings
+*.vs/
+*.bak
+*.cache
+*.log
+*.swp
+*.swm
+*.swo
+*.user
+*.userosscache
+*.[Bb]ackup.*
 
-# Fortran module files
-*.mod
-*.smod
+# Packages
+*.nupkg  
+# The packages folder can be ignored because of Package Restore
+**/[Pp]ackages/*
+# except build/, which is used as an MSBuild target.
+!**/[Pp]ackages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/[Pp]ackages/repositories.config
+# NuGet v3's project.json files produces more ignoreable files
+*.nuget.props
+*.nuget.targets
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+# macOS
+.DS_Store
 
-# Executables
-*.exe
-*.out
-*.app
+# Windows
+Thumbs.db
